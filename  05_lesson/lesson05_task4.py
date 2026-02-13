@@ -1,4 +1,6 @@
 from time import sleep
+
+from pyexpat.errors import messages
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -19,4 +21,7 @@ sleep(2)
 login_button = driver.find_element(By.CSS_SELECTOR, "button[type='submit")
 login_button.click()
 sleep(2)
+
+message = driver.find_element(By.CSS_SELECTOR, ".flash.success")
+print(message.text)
 driver.quit()
