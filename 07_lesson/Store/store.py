@@ -6,10 +6,10 @@ from order import Order
 def test_store():
     driver = webdriver.Firefox()
     login_page = LoginPage(driver)
-    login_page.user_personal_data()
+    login_page.login("standard_user", "secret_sauce" )
     main_page = MainPage(driver)
     main_page.add_to_cart()
     order = Order(driver)
-    order.user_profile()
+    order.user_profile("Сергей", "Кожемякин", "236029")
     order.result()
     driver.quit()

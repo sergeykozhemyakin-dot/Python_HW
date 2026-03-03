@@ -7,10 +7,16 @@ class Order:
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
 
-    def user_profile(self):
-        self.driver.find_element(By.ID, "first-name").send_keys("Сергей")
-        self.driver.find_element(By.ID, "last-name").send_keys("Кожемякин")
-        self.driver.find_element(By.ID, "postal-code").send_keys("236029")
+    def user_profile(self, first_name, last_name, postal_code):
+        first_name_field = self.wait.until(EC.presence_of_element_located((By.ID, "first-name")))
+        first_name_field.clear()
+        first_name_field.send_keys(first_name)
+        last_name_field = self.wait.until(EC.presence_of_element_located((By.ID,"last-name")))
+        last_name_field.clear()
+        last_name_field.send_keys(last_name)
+        postal_code_field = self.wait.until(EC.presence_of_element_located((By.ID, "postal-code")))
+        postal_code_field.clear()
+        postal_code_field.send_keys(postal_code)
         self.driver.find_element(By.ID, "continue").click()
         return
 
