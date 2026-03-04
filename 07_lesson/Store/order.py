@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 class Order:
     def __init__(self, driver):
         self.driver = driver
@@ -11,7 +12,7 @@ class Order:
         first_name_field = self.wait.until(EC.presence_of_element_located((By.ID, "first-name")))
         first_name_field.clear()
         first_name_field.send_keys(first_name)
-        last_name_field = self.wait.until(EC.presence_of_element_located((By.ID,"last-name")))
+        last_name_field = self.wait.until(EC.presence_of_element_located((By.ID, "last-name")))
         last_name_field.clear()
         last_name_field.send_keys(last_name)
         postal_code_field = self.wait.until(EC.presence_of_element_located((By.ID, "postal-code")))
@@ -22,7 +23,7 @@ class Order:
 
     def result(self):
         total_price = self.wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".summary_total_label"))).text
-        price ="$58.29"
+        price = "$58.29"
         assert price in total_price
         print(" РЕЗУЛЬТАТ ТЕСТА")
         print(f" {total_price}")

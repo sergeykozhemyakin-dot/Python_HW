@@ -1,5 +1,5 @@
-import pytest
 from calculator_page import CalculatorPage
+
 
 def test_calculator(chrome_driver):
     calc = CalculatorPage(chrome_driver)
@@ -8,7 +8,3 @@ def test_calculator(chrome_driver):
     result = calc.get_result()
     print(f'Результат: {result}')
     assert result == "15", f"Ожидалось 15, получено {result}"
-
-
-
-

@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
+
 def chrome_driver():
     options = ChromeOptions()
     options.add_argument('--start-maximized')
@@ -10,6 +11,7 @@ def chrome_driver():
     driver.implicitly_wait(4)
     yield driver
     driver.quit()
+
 
 @pytest.fixture
 def firefox_driver():

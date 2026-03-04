@@ -9,8 +9,7 @@ class CalculatorPage:
         self.driver = driver
         self.driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
 
-
-    def input_delay(self) :
+    def input_delay(self):
         input_field = self.driver.find_element(By.CSS_SELECTOR, "#delay")
         input_field.clear()
         input_field.send_keys("45")
@@ -25,16 +24,3 @@ class CalculatorPage:
         wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".screen"), "15"))
         result_text = self.driver.find_element(By.CSS_SELECTOR, ".screen").text
         return result_text
-
-
-
-
-
-
-
-
-
-
-
-
-
