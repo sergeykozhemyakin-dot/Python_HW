@@ -5,9 +5,10 @@ def fizz_buzz():
             print("FizzBuzz")
         elif numbers % 5 == 0:
                 print("Buzz")
-        elif numbers % 3 == 0 :
+        elif numbers % 3 == 0:
                 print("Fizz")
         else:
             print(numbers)
+
 
 fizz_buzz()
