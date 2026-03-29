@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
+
 def test_swag_labs():
     driver = webdriver.Firefox()
     driver.get("https://www.saucedemo.com/")
@@ -31,10 +33,4 @@ def test_swag_labs():
     else:
         print("Неверная сумма")
 
-
     driver.quit()
-
-
-
-
-

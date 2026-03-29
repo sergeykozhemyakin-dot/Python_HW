@@ -40,5 +40,4 @@ def test_foam():
         assert "alert-success" in element_class, f"Поле {field_id} не зеленое! Класс: {element_class}"
         print(f"{field_id} зеленый")
 
-
     driver.quit()

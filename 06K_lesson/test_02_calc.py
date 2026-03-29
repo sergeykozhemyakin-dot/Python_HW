@@ -3,8 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
+
 def click(driver, b):
-     driver.find_element(By.XPATH,f'//span[text()="{b}"]').click()
+    driver.find_element(By.XPATH, f'//span[text()="{b}"]').click()
+
 
 def test_calculator():
     driver = webdriver.Chrome()
@@ -22,7 +24,3 @@ def test_calculator():
     assert result == "15"
     print(f'Результат:{result}')
     driver.quit()
-
-
-
-
