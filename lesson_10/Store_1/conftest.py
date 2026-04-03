@@ -6,7 +6,7 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 def chrome_driver():
     options = ChromeOptions()
-    options.add_argument('--start-maximized')
+    options.add_argument("--start-maximized")
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(4)
     yield driver
