@@ -6,7 +6,11 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @allure.feature("Личный кабинет пользователя")
 class LoginPage:
-    def __init__(self, driver):
+    def __init__(self, driver) -> None:
+        """
+        Инициализация страницы логина.
+        :param driver: Экземпляр WebDriver.
+        """
         self.driver = driver
         self.driver.get("https://www.saucedemo.com")
         self.wait = WebDriverWait(driver, 10)
@@ -15,8 +19,16 @@ class LoginPage:
     @allure.severity(allure.severity_level.BLOCKER)
     @allure.title("Вход в систему под пользователем { user_name}")
     def login(self, user_name=str, password=str) -> None:
+        """
+        Выполняет вход в систему с указанными учетными данными.
+        :param user_name: Логин пользователя.
+        :param password: Пароль пользователя.
+        :return: None
+        """
         with allure.step("Ввод логина"):
-            login_field = self.wait.until(EC.presence_of_element_located((By.ID, "user-name")))
+            login_field = self.wait.until(
+                EC.presence_of_element_located((By.ID, "user-name"))
+            )
             login_field.clear()
             login_field.send_keys(user_name)
 
